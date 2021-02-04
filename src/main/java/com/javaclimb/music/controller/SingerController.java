@@ -32,6 +32,7 @@ public class SingerController
 	@PostMapping(value = "/add")
 	public Result addSinger(@RequestBody Singer singer)
 	{
+		singer.setPic("/img/singerPic/default.jpg");//设置默认图片
 		Singer resinger = singerService.insert(singer);
 		return Result.success("歌手信息新增成功",resinger);
 	}
