@@ -1,7 +1,7 @@
 package com.javaclimb.music.controller;
 
 import com.javaclimb.music.common.Result;
-import com.javaclimb.music.entity.Singer;
+
 import com.javaclimb.music.entity.Song;
 import com.javaclimb.music.service.SongService;
 import io.swagger.annotations.Api;
@@ -26,7 +26,7 @@ public class SongController
 	@Autowired
 	private SongService songService;
 
-	final private String defaultsongpicpath="/img/songPic/default.jpg";//歌曲的默认图片
+	final private String defaultsongpicpath="/img/songPic/default.png";//歌曲的默认图片
 	/**
 	 * 上传歌曲资源
 	 * 上传成功data返回歌曲文件的的地址

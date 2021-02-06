@@ -30,8 +30,8 @@ public class SwaggerConfig {
 	}
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("利用swagger构建api文档")
-				.description("简单使用swagger2")
+				.title("前后端分离api文档")
+				.description("音乐网站")
 				.version("1.0")
 				.build();
 	}

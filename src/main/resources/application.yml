@@ -9,6 +9,6 @@ spring:
     time-zone: GMT+8
   servlet:
     multipart:
-      max-file-size: 20MB
+      max-file-size: 30MB # 上传最大文件大小为30MB
 server:
   port: 8888
