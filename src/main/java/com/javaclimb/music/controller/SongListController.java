@@ -1,8 +1,10 @@
 package com.javaclimb.music.controller;
 
 import com.javaclimb.music.common.Result;
+import com.javaclimb.music.entity.ListSong;
 import com.javaclimb.music.entity.Song;
 import com.javaclimb.music.entity.SongList;
+import com.javaclimb.music.service.ListSongService;
 import com.javaclimb.music.service.SongListService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +28,8 @@ public class SongListController
 {
 	@Autowired
 	SongListService songListService;
+	@Autowired
+	private ListSongService listSongService;
 	final String defaultpicpath="/img/songListPic/default.jpg";
 	/**
 	 * 添加歌单
@@ -63,6 +67,11 @@ public class SongListController
 			String filePath = System.getProperty("user.dir")+System.getProperty("file.separator")+prePicpath;
 			File file=new File(filePath);
 			file.delete();
+		}
+		List<ListSong> bySongListid = listSongService.findBySongListid(id);//将歌单里面的记录也全部删去
+		for (ListSong listSong : bySongListid)
+		{
+			listSongService.deleteById(listSong.getId());
 		}
 		boolean b = songListService.deleteById(id);
 		return Result.success("歌单删除成功",b);

@@ -34,6 +34,10 @@ public interface SongService
 	public Song findById(Integer id);
 
 	/**
+	 * 根据歌曲名查询整个对象
+	 */
+	public Song findByname(String name);
+	/**
 	 * 查询所有歌曲
 	 */
 	public List<Song> findAll();

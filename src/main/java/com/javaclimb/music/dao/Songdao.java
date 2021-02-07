@@ -16,4 +16,6 @@ public interface Songdao extends JpaRepository<Song,Integer>
 	List<Song> findByNameLike(String name);
 
 	List<Song> findBySingerId(Integer id);//根据歌手ID来查询
+
+	List<Song> findByName(String  name);
 }

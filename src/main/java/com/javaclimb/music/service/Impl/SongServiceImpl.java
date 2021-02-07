@@ -72,6 +72,17 @@ public class SongServiceImpl implements SongService
 	}
 
 	/**
+	 * 根据歌曲名查询整个对象
+	 *
+	 * @param name
+	 */
+	@Override
+	public Song findByname(String name)
+	{
+		return songdao.findByName(name).get(0);
+	}
+
+	/**
 	 * 查询所有歌曲
 	 */
 	@Override

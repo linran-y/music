@@ -68,8 +68,8 @@ public class SingerController
 	 * 根据主键查询整个对象
 	 */
 	@ApiOperation("根据主键查询整个对象")
-	@PostMapping(value = "/selectByPrimaryKey")
-	public Result findById(@RequestBody Integer id)
+	@GetMapping(value = "/findById")
+	public Result findById(@RequestParam("id") Integer id)
 	{
 		Singer singer = singerService.findById(id);
 		return Result.success("歌手信息查询成功",singer);

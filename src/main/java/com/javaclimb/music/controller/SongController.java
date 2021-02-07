@@ -82,6 +82,17 @@ public class SongController
 		return Result.success("歌曲查询成功",bySingerId);
 	}
 	/**
+	 * 根据id查询歌曲
+	 */
+	@ApiOperation("根据歌手id查询所有歌曲")
+	@GetMapping("/findSongbyid")
+	public Result findSongbyid(@RequestParam("id")Integer id)
+	{
+		Song byId = songService.findById(id);
+		return Result.success("歌曲查询成功",byId);
+	}
+
+	/**
 	 *根据歌曲名来模糊查询
 	 */
 	@ApiOperation("根据歌曲名来模糊查询")
@@ -90,6 +101,16 @@ public class SongController
 	{
 		List<Song> byNameLike = songService.findByNameLike(name);
 		return Result.success("歌曲查询成功",byNameLike);
+	}
+	/**
+	 *根据歌曲名查询歌曲对象
+	 */
+	@ApiOperation("根据歌曲名来模糊查询")
+	@GetMapping("/findsongByName")
+	public Result findsongByName(@RequestParam("name")String name)
+	{
+		Song byname = songService.findByname(name);
+		return Result.success("歌曲查询成功",byname);
 	}
 	/**
 	 * 删除歌曲
