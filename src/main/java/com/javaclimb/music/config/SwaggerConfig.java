@@ -14,6 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /*
  *@auther ykw
  *@date 2021/1/31 21:23
+ * 简单配置swagger
+ * api访问地址:http://localhost:8888/swagger-ui.html#/
  */
 @Configuration
 @EnableSwagger2

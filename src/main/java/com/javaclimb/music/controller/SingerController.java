@@ -107,6 +107,7 @@ public class SingerController
 	/**
 	 * 更新歌手图片
 	 */
+	@ApiOperation("更新歌手图片")
 	@PostMapping(value = "/updateSingerPic")
 	public Result updateSingerPic(@RequestParam("file") MultipartFile avatorFile, @RequestParam("id")int id)
 	{
