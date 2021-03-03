@@ -50,7 +50,7 @@ public class ConsumerController
 		Consumer update = consumerService.update(consumer);
 		return Result.success("修改成功",update);
 	}
-	/**
+	/*
 	 * 根据id删除前端用户
 	 */
 	@ApiOperation("根据id删除前端用户")
@@ -147,6 +147,23 @@ public class ConsumerController
 			}
 		} catch (IOException e) {
 			return Result.fail("上传失败"+e.getMessage());
+		}
+	}
+
+	/**
+	 * 前台登录验证
+	 */
+	@ApiOperation("前台登录验证")
+	@GetMapping(value = "/login")
+	public Result login(@RequestParam("username") String username,@RequestParam("password") String password)
+	{
+		Consumer consumer = consumerService.verifyPassword(username, password);
+		if(consumer != null)
+		{
+			return Result.success("登录成功",consumer);
+		}
+		else {
+			return Result.fail("账号或密码错误");
 		}
 	}
 }

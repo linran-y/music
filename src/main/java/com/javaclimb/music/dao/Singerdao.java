@@ -12,9 +12,7 @@ import java.util.List;
  */
 public interface Singerdao extends JpaRepository<Singer, Integer>
 {
-
 	List<Singer>findBySex(Integer sex);
 	@Query("select t from Singer t where t.name like %?1%")
 	List<Singer>findByNameLike(String name);
-
 }

@@ -91,7 +91,16 @@ public class SongController
 		Song byId = songService.findById(id);
 		return Result.success("歌曲查询成功",byId);
 	}
-
+	/**
+	 * 查询所有歌曲
+	 */
+	@ApiOperation("查询所有歌曲")
+	@GetMapping("/findall")
+	public Result findall()
+	{
+		List<Song> all = songService.findAll();
+		return Result.success("歌曲查询成功",all);
+	}
 	/**
 	 *根据歌曲名来模糊查询
 	 */

@@ -12,7 +12,6 @@ import java.util.Date;
  */
 @Entity
 @Table(name="singer")
-
 @Data
 public class Singer{
     /*主键*/
